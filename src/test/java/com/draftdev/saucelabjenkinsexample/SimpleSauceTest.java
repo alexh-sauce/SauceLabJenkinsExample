@@ -65,7 +65,7 @@ public class SimpleSauceTest {
         URL url = new URL("https://oauth-2da9thpwr-65cdf:456b155a-3c54-4341-9bd3-f128dbb12256@ondemand.eu-central-1.saucelabs.com:443/wd/hub"); //Add your onDemand URL here or the test will not work 
         
         driver = new RemoteWebDriver(url, desiredCap);
-        System.out.println("Remote web driver is:" + RemoteWebDriver == null);
+        System.out.println("Remote web driver is:" + driver == null);
     }
 
     @DisplayName("Selenium Navigation Test")        //The name of the test
