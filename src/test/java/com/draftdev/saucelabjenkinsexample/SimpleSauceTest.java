@@ -40,11 +40,12 @@ public class SimpleSauceTest {
         *Set the browser and platform to be tested on using the capabilities class
         */
         DesiredCapabilities desiredCap = new DesiredCapabilities();
-        desiredCap.setBrowserName(System.getenv("SELENIUM_BROWSER"));        
-        desiredCap.setCapability(CapabilityType.PLATFORM, System.getenv("SELENIUM_PLATFORM")); 
+	desiredCapabilities.setBrowserName(System.getenv("SAUCE_ONDEMAND_BROWSERS"));
+        desiredCapabilities.setVersion(System.getenv("SAUCE_ONDEMAND_BROWSERS"));
+        desiredCapabilities.setCapability(CapabilityType.PLATFORM, System.getenv("SAUCE_ONDEMAND_BROWSERS"));
+        desiredCapabilities.setCapability(build, System.getenv("SAUCE_BUILD_NAME"));
+
         //These environmental variables are set using Jenkins and the OnDemand Driver                                
-                                  
-   
         
         /*
         *Add your username and access key found under User Settings
