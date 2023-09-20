@@ -67,6 +67,9 @@ public class SimpleSauceTest {
         
         driver = new RemoteWebDriver(url, desiredCap);
         System.out.println("Remote web driver is: " + driver);
+
+        String message = String.format("SauceOnDemandSessionID=%1$s job-name=%2$s", driver.getSessionId().toString(), "Selenium Navigation Test");
+        System.out.println(message);
     }
 
     @DisplayName("Selenium Navigation Test")        //The name of the test
