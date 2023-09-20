@@ -55,6 +55,7 @@ public class SimpleSauceTest {
         sauceOptions.put("name", testInfo.getDisplayName());
 
         desiredCap.setCapability("sauce:options", sauceOptions);
+        desiredCap.setCapability("tunnelName", System.getenv("TUNNEL_NAME"));
         
         /*
         * OnDemand URL found under User Settings in Account Settings
@@ -65,7 +66,7 @@ public class SimpleSauceTest {
         URL url = new URL("https://alexh-sauce:" + System.getenv("SAUCE_ACCESS_KEY") + "@ondemand.eu-central-1.saucelabs.com:443/wd/hub"); //Add your onDemand URL here or the test will not work 
         
         driver = new RemoteWebDriver(url, desiredCap);
-        System.out.println("Remote web driver is:" + driver == null);
+        System.out.println("Remote web driver is: " + driver);
     }
 
     @DisplayName("Selenium Navigation Test")        //The name of the test
